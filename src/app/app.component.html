@@ -9,6 +9,13 @@
       <br><br>
       <label for="pay">Pay:</label>
       <input type="text" name="pay" formControlName="pay">
+      <div formArrayName="address" *ngFor="let addr of a.get('address').controls; let j = index">
+  <label for="name">City:</label>
+      <input type="text" name="city" formControlName="city">
+      <br><br>
+      <label for="pay">State:</label>
+      <input type="text" name="state" formControlName="state">
+      </div>
     </div>
   </div>
   <br>
