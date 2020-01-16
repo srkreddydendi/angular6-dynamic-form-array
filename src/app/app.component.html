@@ -4,18 +4,21 @@
 <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
 	<div formArrayName="arr" *ngFor="let a of myForm.get('arr').controls; let i = index">
 		<div [formGroupName]="i" style="margin-bottom: 10px;">
+     $$ {{name}}
 			<label for="name">Name:</label>
 			<input type="text" name="name" formControlName="name">
-			<br><br>
-			<label for="pay">Age:</label>
+			
+			<label for="age">Age:</label>
 			<input type="text" name="age" formControlName="age">
 			<div formArrayName="address" *ngFor="let addr of a.get('address').controls; let j = index">
-				<label for="name">City:</label>
-				<input type="text" name="city" formControlName="city">
-				<br><br>
-				<label for="pay">State:</label>
-				<input type="text" name="state" formControlName="state">
-      </div>
+				<div [formGroupName]="j" style="margin-bottom: 10px;">
+					<label for="city">City:</label>
+					<input type="text" name="city" formControlName="city">
+					<br><br>
+					<label for="state">State:</label>
+					<input type="text" name="state" formControlName="state">
+        </div>
+				</div>
 			</div>
 		</div>
 		<br>
