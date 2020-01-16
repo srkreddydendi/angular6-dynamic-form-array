@@ -22,7 +22,7 @@ export class AppComponent  {
   createItem() {
     return this.fb.group({
       name: [''],
-      pay: [''],
+      age: [''],
       address: this.fb.array([
         {city:[''],
         state:['']
